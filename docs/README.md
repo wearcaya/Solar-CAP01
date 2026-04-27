@@ -2,13 +2,7 @@
 
 This package contains an expanded 10-page IEEE-style version of the paper, a reproducible synthetic evaluation, generated figures, tables, and raw CSV outputs.
 
-## Main paper
 
-- `paper/main.tex`: IEEEtran manuscript.
-- `paper/content/`: section files.
-- `paper/references.bib`: bibliographic database retained for editing; the compiled version uses an IEEE-style reference list in `main.tex` for portability.
-- `paper/figures/`: vector PDF figures and PNG copies.
-- `paper/tables/`: LaTeX tables generated from the experiment.
 
 ## Reproducibility
 
