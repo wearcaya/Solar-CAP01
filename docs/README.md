@@ -57,6 +57,4 @@ Or:
 The manuscript avoids low-level implementation details. The code is provided as a reproducibility artifact only.
 
 
-## 50+ reference CLEI revision
 
-This revision expands the scholarly basis from 16 to 54 bibliography entries, adding recent 2024--2026 literature on renewable-aware edge orchestration, carbon-aware serverless/AI systems, software carbon accounting, and data-center energy demand. Figures are exported as vector PDF and high-resolution PNG (600 dpi).
