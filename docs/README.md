@@ -1,54 +1,60 @@
-# Solar-CAP CLEI 2026 Package
+# Solar-CAP
 
-This package contains an expanded 10-page IEEE-style version of the paper, a reproducible synthetic evaluation, generated figures, tables, and raw CSV outputs.
+**Carbon-Aware Resilient Scheduling for Solar-Powered Edge Computing under Energy Partition Events**
 
+Solar-CAP is a scheduling model for solar-powered edge infrastructures where energy availability is not always reliable. Instead of treating energy only as a cost, this project models severe renewable scarcity as an **energy partition**: a situation where an edge node may still be reachable through the network, but cannot safely participate in service execution without relying on brown energy.
 
+The goal is simple: keep the service resilient while using as little brown energy as possible.
 
-## Reproducibility
+## What Solar-CAP does
 
-The experiment uses deterministic seeds:
+Solar-CAP decides which edge nodes should remain active over time by considering:
 
-`42, 43, 44, 45, 46, 47, 48, 49, 50, 51`
+- local solar generation,
+- battery state,
+- brown-energy emissions,
+- node activation and switching,
+- and a minimum `K`-active-node quorum for service availability.
 
-Profiles:
+It aims to reduce emissions without breaking the required level of service continuity.
 
-`sunny, cloudy, intermittent, stormy`
+## Evaluation
 
-Protocol:
+The evaluation uses a deterministic and reproducible setup with:
 
-- `N = 8` edge nodes.
-- `K = 3` active nodes.
-- `T = 24` hourly slots.
-- 40 daily traces: 10 seeds x 4 solar profiles.
-- Baselines: Always-on, Static-K, Greedy carbon-aware, Solar-CAP.
+- 40 daily traces,
+- 10 fixed random seeds,
+- 4 solar regimes:
+  - sunny,
+  - cloudy,
+  - intermittent,
+  - stormy.
 
-To regenerate all CSVs, figures, and tables:
+Solar-CAP is compared against three baselines:
 
-```bash
-pip install -r requirements.txt
-python src/run_experiments.py
-```
+- **Always-on**
+- **Static-K**
+- **Greedy carbon-aware**
 
-Or:
+## Main result
 
-```bash
-./reproduce.sh
-```
+Across all evaluated traces, Solar-CAP reduced CO₂e emissions by:
 
-## Outputs
+- **87.1%** compared with Always-on,
+- **52.7%** compared with Static-K,
+- **6.8%** compared with Greedy carbon-aware scheduling.
 
-- `results/csv/scenario_policy_summary.csv`
-- `results/csv/hourly_traces.csv`
-- `results/csv/aggregate_by_profile_policy.csv`
-- `results/csv/overall_policy_comparison.csv`
-- `results/csv/solar_cap_reductions.csv`
-- `results/csv/sensitivity_switch_weight.csv`
-- `results/figures/*.pdf`
-- `results/tables/*.tex`
+At the same time, it preserved the required active quorum in all evaluated time slots and avoided unnecessary switching compared with the greedy policy.
 
-## Notes
+## Why it matters
 
-The manuscript avoids low-level implementation details. The code is provided as a reproducibility artifact only.
+Edge computing is moving closer to renewable-powered and geographically distributed deployments. However, solar energy is intermittent, and a node with low battery may become operationally unavailable even if the network link is still alive.
+
+Solar-CAP captures this behavior directly and provides a practical way to reason about sustainability and resilience together.
+
+## Repository contents
+
+```text
 
 
 
