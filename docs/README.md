@@ -55,6 +55,22 @@ Solar-CAP captures this behavior directly and provides a practical way to reason
 ## Repository contents
 
 ```text
-
-
+.
+├── configs/
+│   └── solar_cap_protocol.json
+│
+├── docs/
+│   └── README.md
+│
+├── notebooks/
+│   ├── PLI_Hyrarchical_FLIpynb
+│   ├── notebook_solar_aware_pulp_col...
+│   └── solar_cap_reproducibility.ipynb
+│
+├── src/
+│   └── ...
+│
+├── .gitignore
+├── reproduce.sh
+└── requirements.txt
 
