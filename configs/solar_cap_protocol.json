@@ -1,0 +1,28 @@
+{
+  "N": 8,
+  "K": 3,
+  "T": 24,
+  "lookahead": 6,
+  "lambda_switch": 0.03,
+  "lambda_safety": 0.2,
+  "hysteresis": 0.1,
+  "energy_partition_threshold": 0.05,
+  "seeds": [
+    42,
+    43,
+    44,
+    45,
+    46,
+    47,
+    48,
+    49,
+    50,
+    51
+  ],
+  "profiles": [
+    "sunny",
+    "cloudy",
+    "intermittent",
+    "stormy"
+  ]
+}
