@@ -1,0 +1,17 @@
+\begin{table*}[t]
+\centering
+\caption{Positioning of Solar-CAP relative to representative scheduling and carbon-aware systems literature.}
+\label{tab:positioning_extended}
+\begin{tabular}{p{2.7cm}p{2.7cm}ccccp{3.3cm}}
+\toprule
+\textbf{Work} & \textbf{Primary target} & \textbf{Edge} & \textbf{Carbon} & \textbf{Renewables} & \textbf{Resilience} & \textbf{Main gap addressed here} \\
+\midrule
+Luo et al. \cite{luo2021resource} & Resource scheduling survey & \checkmark & -- & -- & partial & Taxonomy does not model renewable intermittency as a consistency/availability stressor. \\
+Lee et al. \cite{lee2023consistency} & CAL theory for real-time systems & \checkmark & -- & -- & \checkmark & Does not optimize energy-source selection or brown-energy exposure. \\
+CASPER \cite{casper2024} & Geo-distributed web services & -- & \checkmark & partial & SLO & Cloud-region scheduling without battery-backed edge quorum constraints. \\
+Cucumber \cite{wiesner2022cucumber} & Renewable-aware admission control & partial & partial & \checkmark & -- & Delay-tolerant admission rather than resilience-preserving activation. \\
+Carbon-aware edge studies \cite{asadov2025carbon,zhang2025energyefficiency} & Spatio-temporal workload shifting & \checkmark & \checkmark & partial & partial & Often treats energy as a cost signal, not as an operational partition. \\
+Solar-CAP & Solar-powered edge quorum scheduling & \checkmark & \checkmark & \checkmark & \checkmark & Jointly models carbon, battery dynamics, energy partitions, and K-resilient activation. \\
+\bottomrule
+\end{tabular}
+\end{table*}
